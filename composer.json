@@ -1,0 +1,17 @@
+{
+    "name": "sanotsroger/e-numbers",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sanotsroger\\ENumbers\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Roger Santos",
+            "email": "rogerioantoniodossantos@outlook.com"
+        }
+    ],
+    "require": {}
+}
