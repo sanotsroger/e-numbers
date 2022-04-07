@@ -4,7 +4,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Sanotsroger\\ENumbers\\": "src/"
+            "SanotsRoger\\ENumbers\\": "src/"
         }
     },
     "authors": [
@@ -13,5 +13,7 @@
             "email": "rogerioantoniodossantos@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    }
 }
