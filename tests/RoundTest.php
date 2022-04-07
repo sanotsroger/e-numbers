@@ -7,46 +7,31 @@ class RoundTest extends TestCase
 {
     /**
      * @test
+     *
+     * @dataProvider numbersTestCase
      */
-    public function shouldRoudNumberToTheABNTRule()
+    public function shouldRoudNumberToTheABNTRule(float $number, float $numberExpected)
     {
-        $numberExpected = Round::ruleABNT(0.342);
-        $this->assertEquals(0.34, $numberExpected);
+        $numberResult = Round::ruleABNT($number);
+        $this->assertEquals($numberExpected, $numberResult);
+    }
 
-        $numberExpected = Round::ruleABNT(0.346);
-        $this->assertEquals(0.35, $numberExpected);
-
-        $numberExpected = Round::ruleABNT(0.3452);
-        $this->assertEquals(0.35, $numberExpected);
-
-        $numberExpected = Round::ruleABNT(0.3450);
-        $this->assertEquals(0.34, $numberExpected);
-
-        $numberExpected = Round::ruleABNT(0.332);
-        $this->assertEquals(0.33, $numberExpected);
-
-        $numberExpected = Round::ruleABNT(0.336);
-        $this->assertEquals(0.34, $numberExpected);
-
-        $numberExpected = Round::ruleABNT(0.3352);
-        $this->assertEquals(0.34, $numberExpected);
-
-        $numberExpected = Round::ruleABNT(0.3350);
-        $this->assertEquals(0.34, $numberExpected);
-
-        $numberExpected = Round::ruleABNT(0.3050);
-        $this->assertEquals(0.30, $numberExpected);
-
-        $numberExpected = Round::ruleABNT(0.3150);
-        $this->assertEquals(0.32, $numberExpected);
-
-        $numberExpected = Round::ruleABNT(0.31);
-        $this->assertEquals(0.31, $numberExpected);
-
-        $numberExpected = Round::ruleABNT(12.3450001);
-        $this->assertEquals(12.35, $numberExpected);
-
-        $numberExpected = Round::ruleABNT(12.3420001);
-        $this->assertEquals(12.34, $numberExpected);
+    public function numbersTestCase()
+    {
+        return [
+            'Test 1' => [0.342, 0.34],
+            'Test 2' => [0.346, 0.35],
+            'Test 3' => [0.3452, 0.35],
+            'Test 4' => [0.3450, 0.34],
+            'Test 5' => [0.332, 0.33],
+            'Test 6' => [0.336, 0.34],
+            'Test 7' => [0.3352, 0.34],
+            'Test 8' => [0.3350, 0.34],
+            'Test 9' => [0.3050, 0.30],
+            'Test 10' => [0.3150, 0.32],
+            'Test 11' => [0.31, 0.31],
+            'Test 12' => [12.3450001, 12.35],
+            'Test 13' => [12.3420001, 12.34],
+        ];
     }
 }
